@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB4CF41A2A8F036500A6B929 /* Notas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB4CF4182A8F036500A6B929 /* Notas.xcdatamodeld */; };
+		CB59F1562A8D63B700449180 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB59F1522A8D63B700449180 /* HomeViewController.swift */; };
+		CB59F1572A8D63B700449180 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB59F1532A8D63B700449180 /* CreateNoteViewController.swift */; };
+		CB59F1582A8D63B700449180 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB59F1552A8D63B700449180 /* SelectViewController.swift */; };
+		CB59F15C2A8D63C400449180 /* ActionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB59F15A2A8D63C300449180 /* ActionEnum.swift */; };
+		CB59F15D2A8D63C400449180 /* CategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB59F15B2A8D63C300449180 /* CategoryEnum.swift */; };
+		CB59F1602A8D63D100449180 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB59F15F2A8D63D100449180 /* Note.swift */; };
+		CB59F16B2A8D63E700449180 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB59F1622A8D63E700449180 /* HomeView.swift */; };
+		CB59F16D2A8D63E700449180 /* NoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB59F1662A8D63E700449180 /* NoteCollectionViewCell.swift */; };
+		CB59F16E2A8D63E700449180 /* NoteTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB59F1672A8D63E700449180 /* NoteTableViewDataSource.swift */; };
+		CB59F16F2A8D63E700449180 /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB59F1692A8D63E700449180 /* SelectView.swift */; };
+		CB59F1702A8D63E700449180 /* CreateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB59F16A2A8D63E700449180 /* CreateNoteView.swift */; };
 		CBD424B02A8D61DE00475143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD424AF2A8D61DE00475143 /* AppDelegate.swift */; };
 		CBD424B22A8D61DE00475143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD424B12A8D61DE00475143 /* SceneDelegate.swift */; };
 		CBD424B42A8D61DE00475143 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD424B32A8D61DE00475143 /* ViewController.swift */; };
 		CBD424B72A8D61DE00475143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBD424B52A8D61DE00475143 /* Main.storyboard */; };
-		CBD424BA2A8D61DE00475143 /* Notas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBD424B82A8D61DE00475143 /* Notas.xcdatamodeld */; };
 		CBD424BC2A8D61DF00475143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD424BB2A8D61DF00475143 /* Assets.xcassets */; };
 		CBD424BF2A8D61DF00475143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBD424BD2A8D61DF00475143 /* LaunchScreen.storyboard */; };
 		CBD424CA2A8D61DF00475143 /* NotasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD424C92A8D61DF00475143 /* NotasTests.swift */; };
@@ -37,12 +48,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB4CF4192A8F036500A6B929 /* Notas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notas.xcdatamodel; sourceTree = "<group>"; };
+		CB59F1522A8D63B700449180 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CB59F1532A8D63B700449180 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
+		CB59F1552A8D63B700449180 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		CB59F15A2A8D63C300449180 /* ActionEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionEnum.swift; sourceTree = "<group>"; };
+		CB59F15B2A8D63C300449180 /* CategoryEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEnum.swift; sourceTree = "<group>"; };
+		CB59F15F2A8D63D100449180 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		CB59F1622A8D63E700449180 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CB59F1662A8D63E700449180 /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB59F1672A8D63E700449180 /* NoteTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewDataSource.swift; sourceTree = "<group>"; };
+		CB59F1692A8D63E700449180 /* SelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
+		CB59F16A2A8D63E700449180 /* CreateNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNoteView.swift; sourceTree = "<group>"; };
 		CBD424AC2A8D61DE00475143 /* Notas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD424AF2A8D61DE00475143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBD424B12A8D61DE00475143 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CBD424B32A8D61DE00475143 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CBD424B62A8D61DE00475143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CBD424B92A8D61DE00475143 /* Notas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notas.xcdatamodel; sourceTree = "<group>"; };
 		CBD424BB2A8D61DF00475143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBD424BE2A8D61DF00475143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBD424C02A8D61DF00475143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +100,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB59F1512A8D63B700449180 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CB59F1522A8D63B700449180 /* HomeViewController.swift */,
+				CB59F1532A8D63B700449180 /* CreateNoteViewController.swift */,
+				CB59F1542A8D63B700449180 /* Select */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CB59F1542A8D63B700449180 /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				CB59F1552A8D63B700449180 /* SelectViewController.swift */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
+		CB59F1592A8D63C300449180 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				CB59F15A2A8D63C300449180 /* ActionEnum.swift */,
+				CB59F15B2A8D63C300449180 /* CategoryEnum.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		CB59F15E2A8D63D100449180 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB59F15F2A8D63D100449180 /* Note.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB59F1612A8D63E700449180 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB59F1622A8D63E700449180 /* HomeView.swift */,
+				CB59F16A2A8D63E700449180 /* CreateNoteView.swift */,
+				CB59F1652A8D63E700449180 /* CollectionNote */,
+				CB59F1682A8D63E700449180 /* Select */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB59F1652A8D63E700449180 /* CollectionNote */ = {
+			isa = PBXGroup;
+			children = (
+				CB59F1662A8D63E700449180 /* NoteCollectionViewCell.swift */,
+				CB59F1672A8D63E700449180 /* NoteTableViewDataSource.swift */,
+			);
+			path = CollectionNote;
+			sourceTree = "<group>";
+		};
+		CB59F1682A8D63E700449180 /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				CB59F1692A8D63E700449180 /* SelectView.swift */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
 		CBD424A32A8D61DE00475143 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +186,11 @@
 		CBD424AE2A8D61DE00475143 /* Notas */ = {
 			isa = PBXGroup;
 			children = (
+				CB4CF4182A8F036500A6B929 /* Notas.xcdatamodeld */,
+				CB59F1612A8D63E700449180 /* Views */,
+				CB59F15E2A8D63D100449180 /* Models */,
+				CB59F1592A8D63C300449180 /* Enums */,
+				CB59F1512A8D63B700449180 /* Controllers */,
 				CBD424AF2A8D61DE00475143 /* AppDelegate.swift */,
 				CBD424B12A8D61DE00475143 /* SceneDelegate.swift */,
 				CBD424B32A8D61DE00475143 /* ViewController.swift */,
@@ -108,7 +198,6 @@
 				CBD424BB2A8D61DF00475143 /* Assets.xcassets */,
 				CBD424BD2A8D61DF00475143 /* LaunchScreen.storyboard */,
 				CBD424C02A8D61DF00475143 /* Info.plist */,
-				CBD424B82A8D61DE00475143 /* Notas.xcdatamodeld */,
 			);
 			path = Notas;
 			sourceTree = "<group>";
@@ -261,10 +350,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB59F1562A8D63B700449180 /* HomeViewController.swift in Sources */,
 				CBD424B42A8D61DE00475143 /* ViewController.swift in Sources */,
 				CBD424B02A8D61DE00475143 /* AppDelegate.swift in Sources */,
+				CB59F1582A8D63B700449180 /* SelectViewController.swift in Sources */,
+				CB59F1702A8D63E700449180 /* CreateNoteView.swift in Sources */,
 				CBD424B22A8D61DE00475143 /* SceneDelegate.swift in Sources */,
-				CBD424BA2A8D61DE00475143 /* Notas.xcdatamodeld in Sources */,
+				CB59F16F2A8D63E700449180 /* SelectView.swift in Sources */,
+				CB59F16B2A8D63E700449180 /* HomeView.swift in Sources */,
+				CB59F1602A8D63D100449180 /* Note.swift in Sources */,
+				CB59F16E2A8D63E700449180 /* NoteTableViewDataSource.swift in Sources */,
+				CB59F1572A8D63B700449180 /* CreateNoteViewController.swift in Sources */,
+				CB59F15C2A8D63C400449180 /* ActionEnum.swift in Sources */,
+				CB59F16D2A8D63E700449180 /* NoteCollectionViewCell.swift in Sources */,
+				CB4CF41A2A8F036500A6B929 /* Notas.xcdatamodeld in Sources */,
+				CB59F15D2A8D63C400449180 /* CategoryEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +545,6 @@
 				INFOPLIST_FILE = Notas/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,7 +571,6 @@
 				INFOPLIST_FILE = Notas/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -602,12 +700,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CBD424B82A8D61DE00475143 /* Notas.xcdatamodeld */ = {
+		CB4CF4182A8F036500A6B929 /* Notas.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CBD424B92A8D61DE00475143 /* Notas.xcdatamodel */,
+				CB4CF4192A8F036500A6B929 /* Notas.xcdatamodel */,
 			);
-			currentVersion = CBD424B92A8D61DE00475143 /* Notas.xcdatamodel */;
+			currentVersion = CB4CF4192A8F036500A6B929 /* Notas.xcdatamodel */;
 			path = Notas.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
