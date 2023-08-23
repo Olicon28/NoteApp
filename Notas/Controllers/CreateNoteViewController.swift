@@ -29,21 +29,23 @@ class CreateNoteViewController: UIViewController{
     }
     
     init(action: ActionEnum, note: Nota? = nil){
+        
         self.noteViewModel = Note(title: note?.title ?? "", description: note?.descriptionNote ?? "", body: note?.body ?? "", date: note?.date ?? "", category: note?.category ?? "")
+        
         self.action = action
-        
+
         super.init(nibName: nil, bundle: nil)
-        self.view.backgroundColor = .white
-        
         if let nota = note{
-            setViewModel(nota: nota)
+            self.noteViewModel = Note(id: nota.objectID ,title: nota.title ?? "", description: nota.descriptionNote ?? "", body: nota.body ?? "", date: nota.date ?? "", category: nota.category ?? "")
         }
+        
+        self.view.backgroundColor = .white
         self.view.addSubview(createNoteView)
         
         if self.action == .edit {
-            setupEditNote(nota: self.noteViewModel)
+            setupEditNote(notaViewModel: self.noteViewModel)
         }else{
-            setupCreateNote(nota: self.noteViewModel)
+            setupCreateNote(notaViewModel: self.noteViewModel)
         }
         
         setupConstraint()
@@ -73,12 +75,12 @@ extension CreateNoteViewController{
         
     }
     
-    func setupEditNote(nota: Note){
-        self.noteViewModel.title = nota.title
-        self.noteViewModel.description = nota.description
-        self.noteViewModel.body = nota.body
-        self.noteViewModel.category = nota.category
-        self.noteViewModel.date = nota.date
+    func setupEditNote(notaViewModel: Note){
+        self.noteViewModel.title = notaViewModel.title
+        self.noteViewModel.description = notaViewModel.description
+        self.noteViewModel.body = notaViewModel.body
+        self.noteViewModel.category = notaViewModel.category
+        self.noteViewModel.date = notaViewModel.date
         
         self.createNoteView.title.text = self.noteViewModel.title
         self.createNoteView.descriptionNote.text = self.noteViewModel.description
@@ -86,8 +88,8 @@ extension CreateNoteViewController{
         self.createNoteView.body.text = self.noteViewModel.body
     }
     
-    func setupCreateNote(nota: Note){
-        if nota.title.isEmpty{            
+    func setupCreateNote(notaViewModel: Note){
+        if notaViewModel.id == nil{
             self.createNoteView.body.font = UIFont.systemFont(ofSize: 16)
             self.createNoteView.body.layer.borderWidth = 1
             self.createNoteView.body.layer.borderColor = UIColor.lightGray.cgColor
@@ -106,14 +108,6 @@ extension CreateNoteViewController{
         }
         
         
-    }
-    
-    func setViewModel(nota: Nota){
-        self.noteViewModel.id = nota.objectID
-        self.noteViewModel.title = nota.title ?? ""
-        self.noteViewModel.description = nota.descriptionNote ?? ""
-        self.noteViewModel.body = nota.body ?? ""
-        self.noteViewModel.category = nota.category ?? ""
     }
     
     func setupConstraint(){
@@ -136,9 +130,11 @@ extension CreateNoteViewController{
 }
 
 extension CreateNoteViewController: CreateNoteViewProtocol{
-    
-    func showAlert() {
-        let alertController = UIAlertController(title: "Alerta", message: "Haz Creado una nota", preferredStyle: .alert)
+    func showAlert(action: ActionEnum) {
+        
+        let message = action == .create ? "Haz Creado una nota" : (action == .edit ? "Haz actualizado una nota" : "")
+        
+        let alertController = UIAlertController(title: "Alerta", message: message, preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "OK", style: .default){
             _ in
@@ -147,7 +143,7 @@ extension CreateNoteViewController: CreateNoteViewProtocol{
         })
         
         navigationController?.present(alertController, animated: true, completion: nil)
-    }
+    }    
     
     func goToHome(){
         navigationController?.pushViewController( HomeViewController(), animated: true )
@@ -161,6 +157,9 @@ extension CreateNoteViewController: CreateNoteViewProtocol{
     }
     
     func tapAddNote() {
+        
+        setViewModel(nota: self.noteViewModel)
+        
         if self.noteViewModel.id == nil{
             createNote()
         }else {
@@ -176,7 +175,6 @@ extension CreateNoteViewController: CreateNoteViewProtocol{
                 noteToUpdate.descriptionNote = self.noteViewModel.description
 
                 do {
-                    // Guarda los cambios en el contexto
                     try context.save()
                     print("Nota actualizada con éxito")
                 } catch {
@@ -188,36 +186,30 @@ extension CreateNoteViewController: CreateNoteViewProtocol{
             
         }
         
-        self.showAlert()
+        self.showAlert(action: self.action)
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        // Utiliza .none para asegurarte de que el estilo de presentación sea el mismo
+        // que se utilizó originalmente (por ejemplo, .fullScreen o .pageSheet)
+        return .none
     }
     
     func didTapSelector() {
         select.modalTransitionStyle = .coverVertical
+        select.preferredContentSize = CGSize(width: select.preferredContentSize.width, height: 100)
+
         if let sheet = select.sheetPresentationController {
-            sheet.detents = [.large(), .medium()]
+            sheet.detents = [.medium()]
             sheet.preferredCornerRadius = 8
             sheet.prefersGrabberVisible = true
         }
         navigationController?.present(select, animated: true)
     }
     
-    private func getDateNowString() -> String{
-        let currentDate = Date()
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "dd-MM-yyyy HH:mm"
-        let dateString = dateFormat.string(from: currentDate)
-        
-        return dateString
-    }
-    
     func createNote(){
         
-        self.noteViewModel.title = self.createNoteView.title.text ?? ""
-        self.noteViewModel.body = self.createNoteView.body.text ?? ""
-        self.noteViewModel.description = self.createNoteView.descriptionNote.text ?? ""
-        self.noteViewModel.category = self.selectedCategory
-        
-
+        updateNote()
         
         let newNote = Nota(context: self.context)
         
@@ -249,6 +241,24 @@ extension CreateNoteViewController: CreateNoteViewProtocol{
         }catch{
             print(error.localizedDescription)
         }
+    }
+    
+    private func setViewModel(nota: Note){
+        self.noteViewModel.id = nota.id
+        self.noteViewModel.title = nota.title
+        self.noteViewModel.description = nota.description
+        self.noteViewModel.body = nota.body
+        self.noteViewModel.category = nota.category
+        self.noteViewModel.date = nota.date
+    }
+    
+    private func getDateNowString() -> String{
+        let currentDate = Date()
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "dd-MM-yyyy HH:mm"
+        let dateString = dateFormat.string(from: currentDate)
+        
+        return dateString
     }
 }
 

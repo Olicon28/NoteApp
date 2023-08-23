@@ -27,7 +27,6 @@ class SelectViewController: UIViewController {
         self.noteViewModel = noteViewModel
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
-        
     }
     
     required init?(coder: NSCoder) {

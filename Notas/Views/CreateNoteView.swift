@@ -12,7 +12,7 @@ protocol CreateNoteViewProtocol{
     func didTapSelector()
     func tapAddNote()
     func canEdit(edit: Bool)
-    func showAlert()
+    func showAlert(action: ActionEnum)
 }
 
 class CreateNoteView: UIView{
@@ -154,27 +154,12 @@ class CreateNoteView: UIView{
     
 }
 
-extension CreateNoteView: UITextFieldDelegate{
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("LOG_--textFieldDidBeginEditing")
-    }
-    
+extension CreateNoteView: UITextFieldDelegate{    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         print("LOG_--textFieldShouldBeginEditing")
         guard let text = textField.text else { return false}
         
         return true
-    }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        print("LOG_--textFieldShouldEndEditing")
-        guard let text = textField.text else { return false}
-        
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        print("LOG_--textFieldDidEndEditing")
     }
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB4CF41A2A8F036500A6B929 /* Notas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB4CF4182A8F036500A6B929 /* Notas.xcdatamodeld */; };
+		CB4CF41D2A95851C00A6B929 /* SelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4CF41C2A95851C00A6B929 /* SelectTableViewCell.swift */; };
 		CB59F1562A8D63B700449180 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB59F1522A8D63B700449180 /* HomeViewController.swift */; };
 		CB59F1572A8D63B700449180 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB59F1532A8D63B700449180 /* CreateNoteViewController.swift */; };
 		CB59F1582A8D63B700449180 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB59F1552A8D63B700449180 /* SelectViewController.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		CB4CF4192A8F036500A6B929 /* Notas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notas.xcdatamodel; sourceTree = "<group>"; };
+		CB4CF41C2A95851C00A6B929 /* SelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTableViewCell.swift; sourceTree = "<group>"; };
 		CB59F1522A8D63B700449180 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CB59F1532A8D63B700449180 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		CB59F1552A8D63B700449180 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB4CF41B2A95850200A6B929 /* SelectTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CB4CF41C2A95851C00A6B929 /* SelectTableViewCell.swift */,
+			);
+			path = SelectTableViewCell;
+			sourceTree = "<group>";
+		};
 		CB59F1512A8D63B700449180 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +148,7 @@
 		CB59F1612A8D63E700449180 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB4CF41B2A95850200A6B929 /* SelectTableViewCell */,
 				CB59F1622A8D63E700449180 /* HomeView.swift */,
 				CB59F16A2A8D63E700449180 /* CreateNoteView.swift */,
 				CB59F1652A8D63E700449180 /* CollectionNote */,
@@ -364,6 +375,7 @@
 				CB59F15C2A8D63C400449180 /* ActionEnum.swift in Sources */,
 				CB59F16D2A8D63E700449180 /* NoteCollectionViewCell.swift in Sources */,
 				CB4CF41A2A8F036500A6B929 /* Notas.xcdatamodeld in Sources */,
+				CB4CF41D2A95851C00A6B929 /* SelectTableViewCell.swift in Sources */,
 				CB59F15D2A8D63C400449180 /* CategoryEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
